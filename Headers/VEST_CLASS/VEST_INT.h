@@ -8,7 +8,7 @@
 
 class VEST_INT : VEST_DATA {
 public:
-	static const short DATA_TYPE = 0x0001;
+	static const short DATA_TYPE = 0x01;
 	long long Int = 0;
 
 	void Update() override {

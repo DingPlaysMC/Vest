@@ -8,7 +8,7 @@
 
 class VEST_DOUBLE : VEST_DATA {
 public:
-	static const short DATA_TYPE = 0x0002;
+	static const short DATA_TYPE = 0x02;
 	long double Double;
 
 	void Update() override {
