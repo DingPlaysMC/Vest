@@ -21,10 +21,26 @@
   <ItemGroup>
     <ClInclude Include="Headers\VEST_ALL.h" />
     <ClInclude Include="Headers\VEST_BASIC.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_ARRAY.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_BOOL.h" />
     <ClInclude Include="Headers\VEST_CLASS\VEST_CLASS.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_CODEARRAY.h" />
     <ClInclude Include="Headers\VEST_CLASS\VEST_DATA.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_DICT.h" />
     <ClInclude Include="Headers\VEST_CLASS\VEST_DOUBLE.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_ERROR.h" />
     <ClInclude Include="Headers\VEST_CLASS\VEST_INT.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_KEYWORD.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_LIST.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_NULL.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_OPERATOR.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_SET.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_STREAM.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_STRING.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_STRUCT.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_THREAD.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_UNION.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_VOID.h" />
     <ClInclude Include="Headers\VEST_INTERPRETED\VEST_BUILTIN.h" />
     <ClInclude Include="Headers\VEST_INTERPRETED\VEST_LEXER.h" />
   </ItemGroup>

@@ -41,6 +41,54 @@
     <ClInclude Include="Headers\VEST_CLASS\VEST_DOUBLE.h">
       <Filter>Header Files\VEST_CLASS</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_ARRAY.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_BOOL.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_CODEARRAY.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_DICT.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_ERROR.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_KEYWORD.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_LIST.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_NULL.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_OPERATOR.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_SET.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_STREAM.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_STRING.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_STRUCT.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_THREAD.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_UNION.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_VOID.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vest.cpp">
