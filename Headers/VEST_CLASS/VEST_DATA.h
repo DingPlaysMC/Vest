@@ -1,7 +1,6 @@
 #pragma once
 
-#include<windows.h>
-#include"VEST_LEXER.h"
+#include <windows.h>
 
 #ifndef VEST_DATA_H
 #define VEST_DATA_H
@@ -37,45 +36,10 @@ class VEST_DATA {
 
 };
 
-class VEST_INT:VEST_DATA {
-	public:
-		static const short DATA_TYPE = 0x0001;
-		long long Int = 0;
-
-		void Update() override {
-			DATA = &this->Int;
-			DATA_ADDR = &Int;
-		}
-
-		long long Getter() {
-			return Int;
-		}
-
-		void Setter(int Data) {
-			Int = Data;
-		}
-
-		void operator=(int Const) {
-			this->Setter(Const);
-		}
-};
-
-class VEST_DOUBLE:VEST_DATA {
-	public:
-		static const short DATA_TYPE = 0x0002;
-		long double Double;
-
-		void Update() override {
-			DATA = &this->Double;
-			DATA_ADDR = &Double;
-		}
-};
-
 class VEST_STREAM:VEST_DATA {
 	public:
 		static const short DATA_TYPE = 0x0003;
 		HANDLE Stream;
-		char NEXTLINE[3] = "\n";
 
 		HANDLE InitStdin() {
 			this->Stream=GetStdHandle((DWORD)-10);

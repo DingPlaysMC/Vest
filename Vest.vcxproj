@@ -21,9 +21,12 @@
   <ItemGroup>
     <ClInclude Include="Headers\VEST_ALL.h" />
     <ClInclude Include="Headers\VEST_BASIC.h" />
-    <ClInclude Include="Headers\VEST_BUILTIN.h" />
-    <ClInclude Include="Headers\VEST_DATA.h" />
-    <ClInclude Include="Headers\VEST_LEXER.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_CLASS.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_DATA.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_DOUBLE.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_INT.h" />
+    <ClInclude Include="Headers\VEST_INTERPRETED\VEST_BUILTIN.h" />
+    <ClInclude Include="Headers\VEST_INTERPRETED\VEST_LEXER.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vest.cpp" />

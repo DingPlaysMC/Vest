@@ -9,26 +9,37 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Header Files\VEST_CLASS">
+      <UniqueIdentifier>{2d75f17c-c16f-4a95-ae5b-c0ea4a6f2a70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\VEST_INTERPRETED">
+      <UniqueIdentifier>{64528117-8790-4ccb-af94-fbe6913bdc89}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Headers\VEST_DATA.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Headers\VEST_BASIC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Headers\VEST_ALL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Headers\VEST_BUILTIN.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Headers\VEST_INTERPRETED\VEST_LEXER.h">
+      <Filter>Header Files\VEST_INTERPRETED</Filter>
     </ClInclude>
-    <ClInclude Include="Headers\VEST_LEXER.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Headers\VEST_INTERPRETED\VEST_BUILTIN.h">
+      <Filter>Header Files\VEST_INTERPRETED</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_DATA.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_CLASS.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_INT.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_DOUBLE.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
