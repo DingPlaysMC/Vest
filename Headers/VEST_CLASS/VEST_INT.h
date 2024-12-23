@@ -20,12 +20,29 @@ public:
 		return Int;
 	}
 
-	void Setter(int Data) {
+	void Setter(long long Data) {
 		Int = Data;
 	}
 
-	void operator=(int Const) {
+	void Setter(long double Data) {
+		Int = (long long)Data;
+	}
+
+	void operator=(long long Const) {
 		this->Setter(Const);
+	}
+
+	void operator=(long double Const) {
+		this->Setter(Const);
+	}
+
+	template<typename T>
+	VEST_INT(T Data) {
+		this->Setter(Data);
+	}
+
+	VEST_INT() {
+		this->Setter(long long(0));
 	}
 };
 

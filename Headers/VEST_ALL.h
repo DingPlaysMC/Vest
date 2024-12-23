@@ -4,6 +4,6 @@
 #define VEST_ALL_H
 
 #include "VEST_BASIC.h"
-#include "VEST_CLASS/VEST_DATA.h"
+#include "VEST_CLASS/VEST_ALL_TYPE.h"
 
 #endif

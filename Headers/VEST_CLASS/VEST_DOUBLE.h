@@ -24,8 +24,25 @@ public:
 		Double = Data;
 	}
 
+	void Setter(long long Data) {
+		Double = (long double)Data;
+	}
+
 	void operator= (long double Const) {
 		this->Setter(Const);
+	}
+
+	void operator= (long long Const) {
+		this->Setter(Const);
+	}
+
+	template<typename T>
+	VEST_DOUBLE(T Data) {
+		this->Setter(Data);
+	}
+
+	VEST_DOUBLE() {
+		this->Setter(long double(0.0));
 	}
 };
 

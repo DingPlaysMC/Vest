@@ -1,48 +1,76 @@
 #pragma once
 
 #include <windows.h>
-#include "VEST_DATA.h"s
+#include "VEST_DATA.h"
 
 #ifndef VEST_STRING_H
 #define VEST_STRING_H
 
+#include <string>
 
 class VEST_STRING :VEST_DATA {
 public:
 	static const short DATA_TYPE = 0x03;
-	char* String = new char[25536];
-	short index = -1;
-
-	void Append(VEST_STRING str) {
-		for (int i = 0; i <= str.index; i++) {
-			this->String[this->index] = str.String[i];
-			index++;
-		}
-	}
-
-	void Append(char* str) {
-		for (int i = 0; i < strlen(str); i++) {
-			this->String[this->index] = str[i];
-			index++;
-		}
-	}
-
-	VEST_STRING operator+(VEST_STRING str) {
-		VEST_STRING newstr;
-		newstr.Append(this->String);
-		newstr.Append(str);
-		return newstr;
-	}
-
-	short GetLen() {
-		return this->index;
-	}
+	std::string String;
 
 	void Update() override {
 		DATA = &this->String;
 		DATA_ADDR = &String;
 	}
 
+	std::string Getter() {
+		return String;
+	}
+
+	void Setter(std::string Data) {
+		String = Data;
+	}
+
+	void Setter(const char* Data) {
+		String = std::string(Data);
+	}
+
+	void Setter(VEST_STRING Data) {
+		String = Data.String;
+	}
+
+	void operator=(std::string Const) {
+		this->Setter(Const);
+	}
+
+	void operator=(const char* Const) {
+		this->Setter(Const);
+	}
+
+	void operator=(VEST_STRING Const) {
+		this->Setter(Const);
+	}
+
+	VEST_STRING operator+(VEST_STRING Data) {
+		VEST_STRING Ret;
+		Ret = this->String.append(Data.String);
+		return Ret;
+	}
+
+	int Find(const char* SubStr) {
+		return this->String.find(SubStr);
+	}
+
+	char& operator[](long long Index) {
+		return this->String[Index];
+	}
+
+	template<typename T>
+	VEST_STRING(T Data) {
+		this->Setter(Data);
+	}
+
+	VEST_STRING() {
+		char* Str = new char[1];
+		Str[0] = '\0';
+		this->Setter(Str);
+	}
 };
+
 
 #endif

@@ -7,5 +7,6 @@
 #include "VEST_DATA.h"
 #include "VEST_INT.h"
 #include "VEST_DOUBLE.h"
+#include "VEST_STRING.h"
 
 #endif
