@@ -15,6 +15,18 @@ public:
 		DATA = &this->Double;
 		DATA_ADDR = &Double;
 	}
+
+	long double Getter() {
+		return Double;
+	}
+
+	void Setter(long double Data) {
+		Double = Data;
+	}
+
+	void operator= (long double Const) {
+		this->Setter(Const);
+	}
 };
 
 #endif

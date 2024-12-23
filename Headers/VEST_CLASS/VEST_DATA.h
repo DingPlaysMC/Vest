@@ -100,18 +100,6 @@ class VEST_FILE :VEST_DATA {
 		}
 };
 
-
-class VEST_ERROR :VEST_DATA {
-	public:
-		short DATA_TYPE = 0x0005;
-		int ErrorCode;
-
-		void Update() override {
-			DATA = &this->ErrorCode;
-			DATA_ADDR = &ErrorCode;
-		}
-};
-
 class VEST_THREAD :VEST_DATA {
 	public:
 		static const short DATA_TYPE = 0x0006;

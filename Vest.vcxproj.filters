@@ -15,6 +15,9 @@
     <Filter Include="Header Files\VEST_INTERPRETED">
       <UniqueIdentifier>{64528117-8790-4ccb-af94-fbe6913bdc89}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\LicenseManager">
+      <UniqueIdentifier>{f8673730-c0a5-4361-9219-06b8117d32a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\VEST_BASIC.h">
@@ -87,6 +90,12 @@
       <Filter>Header Files\VEST_CLASS</Filter>
     </ClInclude>
     <ClInclude Include="Headers\VEST_CLASS\VEST_VOID.h">
+      <Filter>Header Files\VEST_CLASS</Filter>
+    </ClInclude>
+    <ClInclude Include="LicenseManaging\LicenseDecoder.h">
+      <Filter>Header Files\LicenseManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VEST_CLASS\VEST_ALL_TYPE.h">
       <Filter>Header Files\VEST_CLASS</Filter>
     </ClInclude>
   </ItemGroup>

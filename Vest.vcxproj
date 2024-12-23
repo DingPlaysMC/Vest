@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="Headers\VEST_ALL.h" />
     <ClInclude Include="Headers\VEST_BASIC.h" />
+    <ClInclude Include="Headers\VEST_CLASS\VEST_ALL_TYPE.h" />
     <ClInclude Include="Headers\VEST_CLASS\VEST_ARRAY.h" />
     <ClInclude Include="Headers\VEST_CLASS\VEST_BOOL.h" />
     <ClInclude Include="Headers\VEST_CLASS\VEST_CLASS.h" />
@@ -43,6 +44,7 @@
     <ClInclude Include="Headers\VEST_CLASS\VEST_VOID.h" />
     <ClInclude Include="Headers\VEST_INTERPRETED\VEST_BUILTIN.h" />
     <ClInclude Include="Headers\VEST_INTERPRETED\VEST_LEXER.h" />
+    <ClInclude Include="LicenseManaging\LicenseDecoder.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vest.cpp" />

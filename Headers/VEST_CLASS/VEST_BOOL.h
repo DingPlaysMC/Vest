@@ -15,6 +15,18 @@ public:
 		DATA = &this->Bool;
 		DATA_ADDR = &Bool;
 	}
+
+	bool Getter() {
+		return Bool;
+	}
+
+	void Setter(bool Data) {
+		Bool = Data;
+	}
+
+	void operator=(bool Const) {
+		this->Setter(Const);
+	}
 };
 
 #endif
