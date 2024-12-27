@@ -1,16 +1,15 @@
 #pragma once
 
-#include <windows.h>
+#include "VEST_CLASS.h"
 
 #ifndef VEST_DATA_H
 #define VEST_DATA_H
 
-class VEST_DATA {
+class VEST_DATA : VEST_CLASS {
 	public:
 		bool AUTO_SYNC = true;
 		void* DATA_ADDR = NULL;
-		long long DATA_SIZE = 0;
-		short DATA_TYPE = -0x1;
+		short DATA_TYPE = 0x00;
 		void* DATA = NULL;
 
 		void* Visit() {

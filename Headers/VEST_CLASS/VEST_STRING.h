@@ -5,6 +5,7 @@
 #ifndef VEST_STRING_H
 #define VEST_STRING_H
 
+#include "VEST_DATA.h"
 #include <string>
 
 class VEST_STRING :VEST_DATA {
@@ -45,15 +46,8 @@ public:
 		return Ret;
 	}
 
-	int Find(const char* SubStr) {
-		if (SubStr == nullptr) {
-			return -1;
-		}
-		size_t pos = this->String.find(SubStr);
-		if (pos == std::string::npos) {
-			return -1;
-		}
-		return static_cast<int>(pos);
+	size_t Find(const char* SubStr) {
+		return this->String.find(SubStr);
 	}
 
 	char& operator[](long long Index) {
