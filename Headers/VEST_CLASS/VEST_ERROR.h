@@ -25,30 +25,32 @@ public:
 	VEST_STRING GetErrorString() {
 		switch (ErrorCode) {
 		case 0x0001:
-			return "UndefinedIdenfierError";
+			return VEST_STRING("UndefinedIdenfierError");
 
 		case 0x0002:
-			return "InvalidCharacterError";
+			return VEST_STRING("InvalidCharacterError");
 
 		case 0x0003:
-			return "InvalidIndexError";
+			return VEST_STRING("InvalidIndexError");
 
 		case 0x0004:
-			return "DivideByZeroError";
+			return VEST_STRING("DivideByZeroError");
 
 		case 0x0005:
-			return "UnableToConvertTypeError";
+			return VEST_STRING("UnableToConvertTypeError");
 
 		case 0x0006:
-			return "UnclosedBracketsError";
+			return VEST_STRING("UnclosedBracketsError");
 
 		case 0x0007:
-			return "UnclosedStringError";
+			return VEST_STRING("UnclosedStringError");
 
 		case 0x0008:
-			return "OverflowError";
+			return VEST_STRING("OverflowError");
 		}
 	}
+
+	
 };
 
 #endif

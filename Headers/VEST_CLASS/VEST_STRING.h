@@ -34,15 +34,12 @@ public:
 		String = Data.String;
 	}
 
-	void operator=(std::string Const) {
-		this->Setter(Const);
+	void Setter(char* Data) {
+		String = std::string(Data);
 	}
 
-	void operator=(const char* Const) {
-		this->Setter(Const);
-	}
-
-	void operator=(VEST_STRING Const) {
+	template<typename T>
+	void operator=(T Const) {
 		this->Setter(Const);
 	}
 
