@@ -43,6 +43,7 @@
     <ClInclude Include="Headers\VEST_CLASS\VEST_UNION.h" />
     <ClInclude Include="Headers\VEST_CLASS\VEST_VOID.h" />
     <ClInclude Include="Headers\VEST_INTERPRETED\VEST_BUILTIN.h" />
+    <ClInclude Include="Headers\VEST_INTERPRETED\VEST_DDL.h" />
     <ClInclude Include="Headers\VEST_INTERPRETED\VEST_LEXER.h" />
     <ClInclude Include="LicenseManaging\LicenseDecoder.h" />
   </ItemGroup>

@@ -1,6 +1,5 @@
 #pragma once
 
-#include <windows.h>
 #include "VEST_DATA.h"
 
 #ifndef VEST_STRING_H
@@ -34,15 +33,9 @@ public:
 		String = Data.String;
 	}
 
+
+	template<typename T>
 	void operator=(std::string Const) {
-		this->Setter(Const);
-	}
-
-	void operator=(const char* Const) {
-		this->Setter(Const);
-	}
-
-	void operator=(VEST_STRING Const) {
 		this->Setter(Const);
 	}
 
@@ -53,7 +46,14 @@ public:
 	}
 
 	int Find(const char* SubStr) {
-		return this->String.find(SubStr);
+		if (SubStr == nullptr) {
+			return -1;
+		}
+		size_t pos = this->String.find(SubStr);
+		if (pos == std::string::npos) {
+			return -1;
+		}
+		return static_cast<int>(pos);
 	}
 
 	char& operator[](long long Index) {
@@ -71,6 +71,5 @@ public:
 		this->Setter(Str);
 	}
 };
-
 
 #endif

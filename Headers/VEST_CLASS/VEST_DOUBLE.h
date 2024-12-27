@@ -1,6 +1,5 @@
 #pragma once
 
-#include <windows.h>
 #include "VEST_DATA.h"
 
 #ifndef VEST_DOUBLE_H

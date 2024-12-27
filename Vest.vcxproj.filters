@@ -98,6 +98,9 @@
     <ClInclude Include="Headers\VEST_CLASS\VEST_ALL_TYPE.h">
       <Filter>Header Files\VEST_CLASS</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\VEST_INTERPRETED\VEST_DDL.h">
+      <Filter>Header Files\VEST_INTERPRETED</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vest.cpp">
