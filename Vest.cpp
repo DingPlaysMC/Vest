@@ -8,15 +8,9 @@ using namespace VEST;
 int main() {
 	VEST_CLASS test;
 	test.$Constructor$ = []() {
-		return 0;
+		printf("Constructor called\n");
 	};
-	printf("%d\n", test.$Constructor$());
-
-	int (*ptr)();
-	ptr = []() {
-		return 1;
-		};
-	ptr();
+	test.$Constructor$();
 
 	return 0;
 }
