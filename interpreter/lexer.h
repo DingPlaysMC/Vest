@@ -22,6 +22,49 @@ int scanner_nextline(scanner* s) {
 
     while(_this = fgetc(s->pFile)) {
         switch(_this){
+            case '\'':
+            {
+                _pos = (strpos*)malloc(sizeof(strpos));
+                memset(_pos->str, 0, 101);
+                _pos->str[0] = _this;
+                _pos->startcol = _col;
+                int _off;
+                bool _conflg = false;
+                for(_off = 1;;_off++) {
+                    if ((&_this+_off) != NULL){
+                        char _tmp = *(&_this+_off);
+                        printf("Debug: _tmp = %c , _off = %d\n", _tmp, _off);
+                        if (_tmp == '\'') {
+                            _pos->endcol = _col-1;
+                            break;
+                        }
+                        if (_tmp == EOF || _tmp == '\n'){
+                            // shit, this is not done
+                            fprintf(stderr, "Error: Can't close the string at line %d, column %d", s->lineno, _col);
+                            _conflg = true;
+                            break;
+                        }
+                    }else{
+                        fprintf(stderr, "Error: Can't close the string at line %d, column %d", s->lineno, _col);
+                        _conflg = true;
+                        break;
+                    }
+                }
+                if (_conflg == false){
+                    for(int i = 0; i<_off; i++){
+                        size_t len = strlen(_pos->str);
+                        if(len < 100) {
+                            _pos->str[len] = fgetc(s->pFile);
+                            _pos->str[len+1] = '\0';
+                        }
+                    }
+                }
+                free(_pos);
+                break;
+            }
+            case '"':
+                // Copy & Paste above
+                break;
             case 'A'...'Z':
             case 'a'...'z':
                 if (!_retainflg){
@@ -33,18 +76,20 @@ int scanner_nextline(scanner* s) {
                     }
                     _pos->str = new char[101];
                     memset(_pos->str, 0, 101);
-                    strcpy(_pos->str, &_this);
+                    _pos->str[0] = _this;
                     _pos->startcol = _col;
-                    printf("Debug: _pos->str = %s\n", _pos->str);
                 }else{
-                    strcat(_pos->str, &_this);
-                    printf("Debug: _pos->str = %s\n", _pos->str);
+                    size_t len = strlen(_pos->str);
+                    if(len < 100) {
+                        _pos->str[len] = _this;
+                        _pos->str[len+1] = '\0';
+                    }
                 }
                 break;
             case '[':
                 if(_retainflg){
                     _retainflg = false;
-                    _pos->endcol = _col;
+                    _pos->endcol = _col-1;
                     printf("Token %d(line %d, from column %d to %d): %s\n", _STRING, s->lineno, _pos->startcol, _pos->endcol, _pos->str);
                     free(_pos);
                 }
@@ -62,7 +107,7 @@ int scanner_nextline(scanner* s) {
             case '{':
                 if(_retainflg){
                     _retainflg = false;
-                    _pos->endcol = _col;
+                    _pos->endcol = _col-1;
                     printf("Token %d(line %d, from column %d to %d): %s\n", _STRING, s->lineno, _pos->startcol, _pos->endcol, _pos->str);
                     free(_pos);
                 }
@@ -71,7 +116,7 @@ int scanner_nextline(scanner* s) {
             case '}':
                 if(_retainflg){
                     _retainflg = false;
-                    _pos->endcol = _col;
+                    _pos->endcol = _col-1;
                     printf("Token %d(line %d, from column %d to %d): %s\n", _STRING, s->lineno, _pos->startcol, _pos->endcol, _pos->str);
                     free(_pos);
                 }
@@ -80,7 +125,7 @@ int scanner_nextline(scanner* s) {
             case ':':
                 if(_retainflg){
                     _retainflg = false;
-                    _pos->endcol = _col;
+                    _pos->endcol = _col-1;
                     printf("Token %d(line %d, from column %d to %d): %s\n", _STRING, s->lineno, _pos->startcol, _pos->endcol, _pos->str);
                     free(_pos);
                 }
@@ -89,7 +134,7 @@ int scanner_nextline(scanner* s) {
             case ';':
                 if(_retainflg){
                     _retainflg = false;
-                    _pos->endcol = _col;
+                    _pos->endcol = _col-1;
                     printf("Token %d(line %d, from column %d to %d): %s\n", _STRING, s->lineno, _pos->startcol, _pos->endcol, _pos->str);
                     free(_pos);
                 }
@@ -98,7 +143,7 @@ int scanner_nextline(scanner* s) {
             case ',':
                 if(_retainflg){
                     _retainflg = false;
-                    _pos->endcol = _col;
+                    _pos->endcol = _col-1;
                     printf("Token %d(line %d, from column %d to %d): %s\n", _STRING, s->lineno, _pos->startcol, _pos->endcol, _pos->str);
                     free(_pos);
                 }
@@ -107,7 +152,7 @@ int scanner_nextline(scanner* s) {
             case '.':
                 if(_retainflg){
                     _retainflg = false;
-                    _pos->endcol = _col;
+                    _pos->endcol = _col-1;
                     printf("Token %d(line %d, from column %d to %d): %s\n", _STRING, s->lineno, _pos->startcol, _pos->endcol, _pos->str);
                     free(_pos);
                 }
@@ -116,7 +161,7 @@ int scanner_nextline(scanner* s) {
             case ' ':
                 if(_retainflg){
                     _retainflg = false;
-                    _pos->endcol = _col;
+                    _pos->endcol = _col-1;
                     printf("Token %d(line %d, from column %d to %d): %s\n", _STRING, s->lineno, _pos->startcol, _pos->endcol, _pos->str);
                     free(_pos);
                 }
@@ -125,7 +170,7 @@ int scanner_nextline(scanner* s) {
             case '\n':
                 if(_retainflg){
                     _retainflg = false;
-                    _pos->endcol = _col;
+                    _pos->endcol = _col-1;
                     printf("Token %d(line %d, from column %d to %d): %s\n", _STRING, s->lineno, _pos->startcol, _pos->endcol, _pos->str);
                     free(_pos);
                 }
@@ -134,7 +179,7 @@ int scanner_nextline(scanner* s) {
             case EOF:
                 if(_retainflg){
                     _retainflg = false;
-                    _pos->endcol = _col;
+                    _pos->endcol = _col-1;
                     printf("Token %d(line %d, from column %d to %d): %s\n", _STRING, s->lineno, _pos->startcol, _pos->endcol, _pos->str);
                     free(_pos);
                 }
@@ -142,7 +187,7 @@ int scanner_nextline(scanner* s) {
             default:
                 if(_retainflg){
                     _retainflg = false;
-                    _pos->endcol = _col;
+                    _pos->endcol = _col-1;
                     printf("Token %d(line %d, from column %d to %d): %s\n", _STRING, s->lineno, _pos->startcol, _pos->endcol, _pos->str);
                     free(_pos);
                 }

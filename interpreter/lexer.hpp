@@ -20,6 +20,7 @@ extern "C" {
 #define _COMMA 264
 #define _SPCE 265
 #define _STOP 266
+#define _IDEN 267
 
 typedef struct {
     FILE* pFile;
@@ -27,10 +28,28 @@ typedef struct {
 } scanner;
 
 // Initialize scanner
-scanner* wscanner_init(const char* fileName);
+scanner* scanner_init(const char* filename) {
+    scanner* s = (scanner*)malloc(sizeof(scanner));
+    if (!s) {
+        fprintf(stderr, "Memory allocation failed.\n");
+        return NULL;
+    }
+    s->pFile = fopen(filename, "r");
+    s->lineno = 1;
+    if (!s->pFile) {
+        fprintf(stderr, "Error opening file.\n");
+    }
+    return s;
+}
 
 // Destroy scanner
-void wscanner_destroy(scanner* s);
+void scanner_destroy(scanner* s) {
+    if (s->pFile) {
+        free(s);
+        fclose(s->pFile);
+        s->pFile = NULL;
+    }
+}
 
 #ifdef __cplusplus
 }
