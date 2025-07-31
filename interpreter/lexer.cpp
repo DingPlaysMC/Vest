@@ -1,8 +1,8 @@
-#include <string>
-#include "lexer.hpp"
+#include "lexer_global.hpp"
+#include "lexer_defined.hpp"
 
 extern "C" {
-#include "lexer.h"
+#include "scanner.h"
 }
 
 int main() {
